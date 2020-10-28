@@ -1,0 +1,122 @@
+#:kivy 1.11.0
+
+<MyScreen>:
+    etiket : etiket
+    container: container
+    BoxLayout:
+
+        orientation: 'vertical'
+
+        GridLayout:
+            id: container
+            cols: 3
+            row_force_default: True
+            row_default_height: 30
+            col_force_default: True
+            col_default_width: dp(130)
+
+            Label:
+                text: "ip:"
+            TextInput:
+                id:container
+            Label :
+                text: "LED"
+                id : etiket
+                markup : True
+
+
+
+
+        Button:
+            text: "submit_ip"
+            size_hint_y: None
+            height: '48dp'
+
+            on_release: root.save_data()
+            on_release: app.root.current = "second"
+
+        Button:
+            text: "connect"
+            size_hint_y : None
+            height : '48dp'
+            on_release: root.baglan()
+
+
+
+        Button:
+            text: "ligth_on"
+            size_hint_y : None
+            height : '48dp'
+            on_release: root.li_on()
+
+
+
+
+        Button:
+            text: "ligth_off"
+            size_hint_y : None
+            height : '48dp'
+            on_release:root.li_of()
+        Button:
+            text: "animate"
+            size_hint_y : None
+            height : '48dp'
+            on_release:root.animate()
+        Button:
+            text: "wago_led_statu"
+            size_hint_y : None
+            height : '48dp'
+            on_release: root.statu()
+        Button:
+            text: "disconnect"
+            size_hint_y : None
+            height : '48dp'
+            on_release: root.disconnect()
+
+<MySecondScreen>:
+    name : "second"
+    BoxLayout:
+        orientation: 'vertical'
+
+        GridLayout:
+            id: container
+            cols: 2
+            row_force_default: True
+            row_default_height: 30
+            col_force_default: True
+            col_default_width: dp(100)
+
+            Label:
+                text: "ip:"
+            TextInput:
+                id: ip
+
+
+
+        Button:
+            text: "connect"
+            size_hint_y: None
+            height: '48dp'
+
+            on_release: root.save_data()
+
+        Button:
+            text: "ligth_on"
+            size_hint_y : None
+            height : '48dp'
+            on_release: root.sent_bite()
+
+
+        Button:
+            text: "ligth_off"
+            size_hint_y : None
+            height : '48dp'
+            on_release : root.on()
+
+
+
+        Button:
+            text: "disconnect"
+            size_hint_y : None
+            height : '48dp'
+
